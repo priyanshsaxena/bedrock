@@ -486,18 +486,8 @@ class WhatsnewView(l10n_utils.LangFilesMixin, TemplateView):
                 template = 'firefox/whatsnew/fx57/whatsnew-57.html'
         elif show_56_whatsnew(version, oldversion):
             template = 'firefox/whatsnew/whatsnew-56.html'
-        elif show_54_whatsnew(version):
-            template = 'firefox/whatsnew/fx54/whatsnew-54.html'
-        elif show_50_whatsnew(version):
-            # zh-TW has locale-specific template: whatsnew-50.zh-TW.html
-            template = 'firefox/whatsnew/whatsnew-50.html'
-        # zh-TW on 49.0 gets a special template
-        elif locale == 'zh-TW' and show_49_0_whatsnew(version):
-            template = 'firefox/whatsnew/whatsnew-zh-tw-49.html'
-        elif show_42_whatsnew(version):
-            template = 'firefox/whatsnew/whatsnew-42.html'
         else:
-            template = 'firefox/australis/whatsnew.html'
+            template = 'firefox/whatsnew/index.html'
 
         # return a list to conform with original intention
         return [template]
