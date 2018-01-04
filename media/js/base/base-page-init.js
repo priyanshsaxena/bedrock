@@ -19,7 +19,6 @@
         var client = Mozilla.Client;
         var utils = Mozilla.Utils;
 
-        utils.initDownloadLinks();
         utils.initMobileDownloadLinks();
         utils.initLangSwitcher();
 

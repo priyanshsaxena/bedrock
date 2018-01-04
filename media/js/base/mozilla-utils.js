@@ -12,11 +12,6 @@ if (typeof Mozilla === 'undefined') {
 
     var Utils = {};
 
-    // a11y assistance
-    Utils.initDownloadLinks = function() {
-        $('.download-list').attr('role', 'presentation');
-    };
-
     // Replace Google Play and Apple App Store links on Android and iOS devices to
     // let them open the native marketplace app
     Utils.initMobileDownloadLinks = function() {
