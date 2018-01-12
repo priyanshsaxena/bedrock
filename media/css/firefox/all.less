@@ -83,28 +83,30 @@
     }
     table {
         width: 100%;
+        th, td {
+            padding: 10px;
+        }
         thead {
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background: url("/media/img/sandstone/grain.png") repeat, #eee;
             th {
                 white-space: nowrap;
-            }
-            th, td {
-                padding: 10px 0;
+                &.platform {
+                    opacity: .4;
+                    text-align: center;
+                }
             }
         }
         tbody {
+            tr.current,
             tr:target {
-                color: #fff;
-                font-weight: bold;
-                background-color: #6fbe4a;
-            }
-            tr:target a {
-                color: #fff;
-            }
-            tr:target th {
-                padding-left: 10px;
-            }
-            th, td {
-                padding: 10px 10px 10px 0;
+                background-color: rgba(255, 255, 255, .5);
+                .download {
+                    opacity: 1;
+                }
             }
             th {
                 font-weight: normal;
@@ -120,7 +122,10 @@
             text-shadow: 0 -1px #fff;
         }
         .download {
-            padding: 10px 0;
+            opacity: .4;
+            &:hover {
+                opacity: 1;
+            }
             a {
                 display: block;
                 padding: 10px 10px 10px 45px;
@@ -150,6 +155,28 @@
                 background-position: 0 -80px;
             }
         }
+    }
+}
+
+html.win .build-table .win,
+html.win64 .build-table .win64,
+html.osx .build-table .osx,
+html.linux .build-table .linux,
+html.linux64 .build-table .linux64 {
+    background-color: rgba(255, 255, 255, .5);
+    opacity: 1 !important;
+}
+
+html.win .build-table tr.current .win,
+html.win64 .build-table tr.current .win64,
+html.osx .build-table tr.current .osx,
+html.linux .build-table tr.current .linux,
+html.linux64 .build-table tr.current .linux64 {
+    color: #fff;
+    font-weight: bold;
+    background-color: #6fbe4a;
+    a {
+        color: inherit;
     }
 }
 

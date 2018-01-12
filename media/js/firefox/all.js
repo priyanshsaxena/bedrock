@@ -90,4 +90,17 @@
             $('.not-found').hide();
         }
     });
+
+    // Highlight the visitor's preferred language(s) if available
+    $(function (){
+        var languages = navigator.languages.slice() || [navigator.language];
+
+        if (location.hash) {
+            languages.push(location.hash.replace('#', ''));
+        }
+
+        $.each(languages, function(index, lang) {
+            $('.build-table #' + lang).addClass('current');
+        });
+    });
 })(jQuery);
